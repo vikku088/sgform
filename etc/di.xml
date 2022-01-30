@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category   Syncitgroup
+ * @package    Syncitgroup_Sgform
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<virtualType name="SyncitgroupSgformGridFilterPool" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+		<arguments>
+			<argument name="appliers" xsi:type="array">
+				<item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
+				<item name="fulltext" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter</item>
+			</argument>
+		</arguments>
+	</virtualType>
+	<virtualType name="SyncitgroupSgformGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+		<arguments>
+			<argument name="collection" xsi:type="object" shared="false">Syncitgroup\Sgform\Model\ResourceModel\Sgform\Collection</argument>
+			<argument name="filterPool" xsi:type="object" shared="false">SyncitgroupSgformGridFilterPool</argument>
+		</arguments>
+	</virtualType>
+	<virtualType name="Syncitgroup\Sgform\Model\ResourceModel\Sgform\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">syncitgroup_sgform</argument>
+			<argument name="resourceModel" xsi:type="string">Syncitgroup\Sgform\Model\ResourceModel\Sgform</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="syncitgroup_sgform_index_listing_data_source" xsi:type="string">Syncitgroup\Sgform\Model\ResourceModel\Sgform\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+</config>
