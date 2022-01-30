@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category   Syncitgroup
+ * @package    Syncitgroup_Sgform
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+ -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+    <update handle="editor"/>
+    <body>
+        <referenceContainer name="left">
+            <block class="Syncitgroup\Sgform\Block\Adminhtml\Items\Edit\Tabs" name="syncitgroup_sgform_items_edit_tabs">
+                <block class="Syncitgroup\Sgform\Block\Adminhtml\Items\Edit\Tab\Main" name="syncitgroup_sgform_items_edit_tab_main"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">main_section</argument>
+                    <argument name="block" xsi:type="string">syncitgroup_sgform_items_edit_tab_main</argument>
+                </action>
+            </block>
+        </referenceContainer>
+        <referenceContainer name="content">
+            <block class="Syncitgroup\Sgform\Block\Adminhtml\Items\Edit" name="test_items_edit"/>
+        </referenceContainer>
+    </body>
+</page>

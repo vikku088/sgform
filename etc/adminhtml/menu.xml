@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category   Syncitgroup
+ * @package    Syncitgroup_Sgform
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Backend/etc/menu.xsd">
+    <menu>
+        <add id="syncitgroup_sgform::core" title="Sgform" module="Syncitgroup_Sgform" sortOrder="90" resource="Syncitgroup_Sgform::sample"/>
+        <add id="syncitgroup_sgform::content" title="Form Content" module="Syncitgroup_Sgform" sortOrder="10" parent="syncitgroup_sgform::core" action="syncitgroup_sgform/items/" resource="Syncitgroup_Sgform::items"/>
+        <add id="syncitgroup_sgform::config" title="Configuration" module="Syncitgroup_Sgform" sortOrder="20" parent="syncitgroup_sgform::core" action="admin/system_config/edit/section/sgform/" resource="Syncitgroup_Sgform::items"/>
+    </menu>
+</config>
