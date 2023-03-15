@@ -21,7 +21,7 @@ class Sgdata extends AbstractHelper
     protected $transportBuilder;
     protected $storeManager;
     protected $inlineTranslation;
-    protected $remoteAddress;
+    protected $RemoteAddress;
     /**
      * Scope config
      *
@@ -42,13 +42,13 @@ class Sgdata extends AbstractHelper
         StoreManagerInterface $storeManager,
         StateInterface $state,
         ScopeConfigInterface $scopeConfig,
-        RemoteAddress $remoteAddress
+        RemoteAddress $RemoteAddress
     ) {
         $this->transportBuilder = $transportBuilder;
         $this->storeManager = $storeManager;
         $this->inlineTranslation = $state;
         $this->scopeConfig = $scopeConfig;
-        $this->remoteAddress = $remoteAddress;
+        $this->remoteAddress = $RemoteAddress;
         parent::__construct($context);
     }
 
